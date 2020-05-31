@@ -11,7 +11,7 @@ const SplashScreen = () => {
 
   useInterval(() => {
     activeCircle <= 3 ? setActiveCircle(activeCircle + 1) : setActiveCircle(0);
-  }, 250);
+  }, 200);
 
   return (
     <View style={styles.container}>

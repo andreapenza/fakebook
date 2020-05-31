@@ -6,9 +6,9 @@ const SECONDARY_LIGHT = '#FFFFFF';
 const TERTIARY_LIGHT = '#606166';
 
 const DEFAULT = '#3186FA';
-const MEDIUM = '	#8b9dc3';
+const MEDIUM = '#8b9dc3';
 const BUTTON_BG = '#dfe3ee';
-const LIGHT = '#f7f7f7';
+const TEXT = '#f7f7f7';
 
 const DarkTheme = {
   Button: {},
@@ -27,4 +27,6 @@ export {
   TERTIARY_LIGHT,
   DEFAULT,
   BUTTON_BG,
+  TEXT,
+  MEDIUM,
 };

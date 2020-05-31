@@ -1,7 +1,8 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import {Button} from 'react-native-elements';
 import FacebookLogo from '../Components/FacebookLogo';
+import Container from '../Components/Container';
 import {DEFAULT, BUTTON_BG} from '../Config/theme';
 import Icon from 'react-native-vector-icons/Feather';
 
@@ -9,9 +10,12 @@ const AuthenticationScreen = ({navigation}) => {
   const goToSignUp = () => {
     navigation.navigate('SignUp');
   };
+  const goToSignIn = () => {
+    navigation.navigate('SignIn');
+  };
 
   return (
-    <View style={styles.container}>
+    <Container>
       <View style={styles.signInLogic}>
         <FacebookLogo />
         <View style={{marginBottom: 15}} />
@@ -22,6 +26,7 @@ const AuthenticationScreen = ({navigation}) => {
           title="Log Into Another Account"
           buttonStyle={styles.accountButtonStyle}
           titleStyle={styles.titleStyle}
+          onPress={goToSignIn}
         />
         <Button
           icon={
@@ -32,24 +37,19 @@ const AuthenticationScreen = ({navigation}) => {
           titleStyle={styles.titleStyle}
         />
       </View>
-      <Button
-        title="CREATE NEW FACEBOOK ACCOUNT"
-        onPress={goToSignUp}
-        buttonStyle={styles.createAccountButtonStyle}
-        titleStyle={styles.titleStyle}
-      />
-    </View>
+      <View style={styles.buttonWrapper}>
+        <Button
+          title="CREATE NEW FACEBOOK ACCOUNT"
+          onPress={goToSignUp}
+          buttonStyle={styles.createAccountButtonStyle}
+          titleStyle={styles.titleStyle}
+        />
+      </View>
+    </Container>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    backgroundColor: 'white',
-  },
   titleStyle: {
     fontSize: 14,
     fontWeight: 'bold',
@@ -81,6 +81,9 @@ const styles = StyleSheet.create({
     width: 300,
     height: 35,
     marginBottom: 35,
+  },
+  buttonWrapper: {
+    alignItems: 'center',
   },
 });
 
